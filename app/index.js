@@ -1,3 +1,1 @@
-var component = require('./component');
-
-document.body.appendChild(component());
+var body = document.getElementById('hello').innerHTML += "hello world";
