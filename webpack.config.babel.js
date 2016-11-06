@@ -15,19 +15,12 @@ module.exports = {
     path: PATHS.build,
     filename: 'bundle.[name].js'
   },
-  resolve: {
-    root: __dirname,
-    alias: {
-      Main: 'main.jsx'
-    },
-    extensions: ['','.js','.jsx']
-  },
   module: {
     loaders:[
       {
         test: /\.jsx?$/,
         exclude: /node-modules/,
-        loaders: ['babel']
+        loaders: ['babel'],
       }
     ]
   },
