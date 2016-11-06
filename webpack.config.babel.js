@@ -1,16 +1,17 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-const ROOT_PATH = path.resolve(__dirname);
+const NODE = path.resolve(__dirname, 'node_modules');
+
 const PATHS = {
-  app: '',
+  app: path.join(__dirname,'./app/index.jsx'),
   build: path.join(__dirname, 'build')
 };
 
 module.exports = {
-  entry: {
-    app: './app/index.jsx',
-  },
+  entry: [
+    PATHS.app
+  ],
   output: {
     path: PATHS.build,
     filename: 'bundle.[name].js'
@@ -21,6 +22,11 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node-modules/,
         loaders: ['babel'],
+      },
+      {
+        test:/\.html$/,
+        loader: 'file-loader?name=[name].[ext]',
+
       }
     ]
   },
