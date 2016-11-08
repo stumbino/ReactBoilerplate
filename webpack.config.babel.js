@@ -3,7 +3,6 @@ const path = require('path');
 
 const NODE = path.resolve(__dirname, 'node_modules');
 const PATHS = {
-  root: path.resolve(__dirname),
   app: path.join(__dirname,'./app/index.jsx'),
   build: path.join(__dirname, 'build')
 };
