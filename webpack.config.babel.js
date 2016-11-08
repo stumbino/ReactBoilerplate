@@ -2,8 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const NODE = path.resolve(__dirname, 'node_modules');
-
 const PATHS = {
+  root: path.resolve(__dirname),
   app: path.join(__dirname,'./app/index.jsx'),
   build: path.join(__dirname, 'build')
 };
@@ -15,6 +15,12 @@ module.exports = {
   output: {
     path: PATHS.build,
     filename: 'bundle.[name].js'
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx','.json'],
+    alias: {
+      Nav: path.resolve(__dirname, 'app/Nav.jsx')
+    }
   },
   module: {
     loaders:[
