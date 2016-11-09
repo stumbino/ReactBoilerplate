@@ -1,15 +1,30 @@
+var webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+
 
 const NODE = path.resolve(__dirname, 'node_modules');
 const PATHS = {
   app: path.join(__dirname,'./app/index.jsx'),
-  build: path.join(__dirname, 'build')
+  build: path.join(__dirname, 'build'),
+  jquery: 'script!jquery/dist/jquery.min.js',
+  foundation: 'script!foundation-sites/dist/foundation.min.js'
 };
 
 module.exports = {
   entry: [
+    PATHS.jquery,
+    PATHS.foundation,
     PATHS.app
+  ],
+  externals:{
+    jquery: 'jQuery'
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery'
+    })
   ],
   output: {
     path: PATHS.build,
@@ -18,7 +33,9 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx','.json'],
     alias: {
-      Nav: path.resolve(__dirname, 'app/Nav.jsx')
+      Nav: path.resolve(__dirname, 'app/Nav.jsx'),
+      Main: path.resolve(__dirname, 'app/Main.jsx'),
+      Examples: path.resolve(__dirname, 'app/Examples.jsx')
     }
   },
   module: {
