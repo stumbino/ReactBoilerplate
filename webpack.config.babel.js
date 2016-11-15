@@ -5,7 +5,7 @@ const path = require('path');
 
 const NODE = path.resolve(__dirname, 'node_modules');
 const PATHS = {
-  app: path.join(__dirname,'./app/index.jsx'),
+  app: path.join(__dirname,'./src/index.jsx'),
   build: path.join(__dirname, 'build'),
   jquery: 'script!jquery/dist/jquery.min.js',
   foundation: 'script!foundation-sites/dist/foundation.min.js'
@@ -33,9 +33,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx','.json'],
     alias: {
-      Nav: path.resolve(__dirname, 'app/Nav.jsx'),
-      Main: path.resolve(__dirname, 'app/Main.jsx'),
-      Examples: path.resolve(__dirname, 'app/Examples.jsx')
+      Nav: path.resolve(__dirname, 'src/Nav.jsx')
     }
   },
   module: {
@@ -48,7 +46,6 @@ module.exports = {
       {
         test:/\.html$/,
         loader: 'file-loader?name=[name].[ext]',
-
       }
     ]
   },

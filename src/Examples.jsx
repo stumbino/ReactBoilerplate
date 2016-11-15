@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 var Examples = React.createClass({
   render(){
     return(
-      <div>_____is a bad kid</div>
+      <div>Hello world!</div>
     )
   }
 
