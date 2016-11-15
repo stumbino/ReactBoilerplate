@@ -6,6 +6,8 @@ import {Link, IndexLink} from 'react-router';
 var Example = React.createClass({
     render(){
       return(
+        <div>
+        <header>
                 <div className="top-bar">
                   <div className="top-bar-left">
                     <ul className="menu">
@@ -14,7 +16,7 @@ var Example = React.createClass({
                             <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>ACC Club</IndexLink>
                         </li>
                         <li>
-                            <Link to="/Examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
+                            <Link to="/Main" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Main</Link>
                         </li>
                         <li>
                             <Link to="/Nav" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
@@ -23,11 +25,16 @@ var Example = React.createClass({
                 </div>
                 <div className="top-bar-right">
                   <ul className="menu">
-                    <li><input type="search" placeholder="Search"/></li>
-                    <li><button type="button" className="button">Search</button></li>
+                    <li><input type="search" placeholder="Search weather"/></li>
+                    <li><button type="submit" className="button" value="Get Weather">Search</button></li>
                   </ul>
                 </div>
         </div>
+      </header>
+      <main>
+          {this.props.children}
+      </main>
+  </div>
       )
     }
 

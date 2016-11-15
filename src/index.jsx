@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Nav from 'Nav';
-
+import Main from 'Main';
 
 import {Route, Router, IndexRoute, hashHistory, browserHistory} from 'react-router';
 
@@ -15,7 +15,9 @@ $(document).foundation();
 
 ReactDOM.render(
 <Router history={browserHistory}>
-  <Route path="/" component={Nav}/>
+  <Route path="/" component={Nav}>
+    <IndexRoute component={Main} />
+  </Route>
 </Router>,
   document.getElementById('root')
 )

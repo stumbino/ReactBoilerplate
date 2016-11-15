@@ -33,6 +33,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx','.json'],
     alias: {
+      Main: path.resolve(__dirname, 'src/Main.jsx'),
       Nav: path.resolve(__dirname, 'src/Nav.jsx')
     }
   },
