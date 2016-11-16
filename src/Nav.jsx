@@ -21,6 +21,9 @@ var Example = React.createClass({
                         <li>
                             <Link to="/Nav" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
                         </li>
+                        <li>
+                            <Link to="/Schedule" activeClassName="active" activeStyle={{fontWeight:'bold'}}> Schedule</Link>
+                        </li>
                       </ul>
                 </div>
                 <div className="top-bar-right">
