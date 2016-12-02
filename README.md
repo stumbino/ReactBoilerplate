@@ -1,2 +1,2 @@
 # ReactBoilerplate
-# A simple react boiler plate that utilizes the css loaders and the javascript loaders.
+# A simple react boilerplate that utilizes the css loaders and the javascript loaders.  The project also is using the new Webpack2.
